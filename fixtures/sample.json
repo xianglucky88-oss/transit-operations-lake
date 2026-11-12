@@ -1,0 +1,44 @@
+[
+  {
+    "source": "operator-a",
+    "observed_at": "2026-11-01T08:00:00Z",
+    "payload": {
+      "route_id": "R1",
+      "stop_id": "S1",
+      "vehicle_id": "V1",
+      "status": "delayed",
+      "delay_seconds": 180
+    }
+  },
+  {
+    "source": "operator-a",
+    "observed_at": "2026-11-01T08:05:00Z",
+    "payload": {
+      "route_id": "R1",
+      "stop_id": "S2",
+      "vehicle_id": "V1",
+      "status": "departed",
+      "delay_seconds": 0
+    }
+  },
+  {
+    "source": "operator-b",
+    "observed_at": "2026-11-01T08:10:00Z",
+    "payload": {
+      "route_id": "M2",
+      "stop_id": "S9",
+      "vehicle_id": "V8",
+      "status": "arrived",
+      "delay_seconds": -30
+    }
+  },
+  {
+    "source": "operator-a",
+    "observed_at": "2026-11-01T08:15:00Z",
+    "payload": {
+      "route_id": "",
+      "stop_id": "S3",
+      "status": "unknown"
+    }
+  }
+]

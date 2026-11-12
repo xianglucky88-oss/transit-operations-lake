@@ -1,0 +1,7 @@
+[project]
+name = "transit-operations-lake"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+[project.scripts]
+transit-operations-lake = "transit_operations.cli:main"
