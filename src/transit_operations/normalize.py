@@ -36,8 +36,10 @@ def normalize(raw: Any, source: str) -> TransitRecord:
     delay = _number(payload.get("delay_seconds"))
     if not route_id or not stop_id or not observed_at or not status:
         raise ValueError("route_id, stop_id, observed_at and status are required")
-    if status not in {"scheduled", "boarding", "delayed", "cancelled", "arrived", "departed"}:
-        raise ValueError("unsupported transit status")
+    # A present-but-unregistered status is passed through unchanged: the
+    # quality rule engine owns the accept/reject/inconclusive decision
+    # (STATUS_UNKNOWN) so unknown statuses can be quarantined rather than
+    # dropped at normalization time.
     if delay is not None and abs(delay) > 86400:
         raise ValueError("delay_seconds is outside the supported range")
 
